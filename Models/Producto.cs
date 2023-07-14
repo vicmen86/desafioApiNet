@@ -9,4 +9,5 @@ public class Producto
   public string Nombre { get; set; }
   public int Precio { get; set; }
   public virtual TipoProducto TipoProducto { get; set; }
+  public virtual ICollection<Stock> Stocks { get; set; }
 }

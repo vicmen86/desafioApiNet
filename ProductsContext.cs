@@ -23,7 +23,7 @@ public class ProductsContext : DbContext
       {
         producto.ToTable("Producto");
         producto.HasKey(p => p.IdProducto);
-        producto.HasOne(p => p.TipoProducto).WithMany(p => p.Producto).HasForeignKey(p => p.TipoProductoId);
+        producto.HasOne(p => p.TipoProducto).WithMany(p => p.Productos).HasForeignKey(p => p.TipoProductoId);
         producto.Property(p => p.Nombre).IsRequired().HasMaxLength(150);
         producto.Property(p => p.Precio);
 
@@ -32,7 +32,7 @@ public class ProductsContext : DbContext
    {
         stock.ToTable("Stock");
         stock.HasKey(s => s.IdStock);
-        stock.HasOne(s => s.Producto).WithMany(s => s.Stock).HasForeignKey(s => s.ProductoId);
+        stock.HasOne(s => s.Producto).WithMany(s => s.Stocks).HasForeignKey(s => s.ProductoId);
         stock.Property(s => s.Descripcion).HasMaxLength(150);
         stock.Property(s => s.Cantidad);
 

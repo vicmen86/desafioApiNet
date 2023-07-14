@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiNet.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("createdb")]
 
 public class CreateDbController : ControllerBase
 {
