@@ -8,4 +8,5 @@ public class Producto
 
   public string Nombre { get; set; }
   public int Precio { get; set; }
+  public virtual TipoProducto TipoProducto { get; set; }
 }
