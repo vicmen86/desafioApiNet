@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using apiNet.Models;
+using ApiNet.Models;
 namespace ApiNet;
 public class ProductsContext : DbContext
 {

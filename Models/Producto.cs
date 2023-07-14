@@ -1,10 +1,10 @@
 
-namespace apiNet.Models;
+namespace ApiNet.Models;
 
 public class Producto
 {
-  public Guid IdProducto { get; set; }
-  public Guid TipoProductoId { get; set; }
+  public int IdProducto { get; set; }
+  public int TipoProductoId { get; set; }
 
   public string Nombre { get; set; }
   public int Precio { get; set; }

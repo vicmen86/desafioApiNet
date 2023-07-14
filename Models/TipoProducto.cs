@@ -1,6 +1,6 @@
-namespace apiNet.Models;
+namespace ApiNet.Models;
 
 public class TipoProducto{
-public Guid IdTipoProducto { get; set; }
+public int IdTipoProducto { get; set; }
 public string Descripcion { get; set; }
 }
