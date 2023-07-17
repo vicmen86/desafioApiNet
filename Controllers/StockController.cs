@@ -6,11 +6,11 @@ namespace ApiNet.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class StoxkController: ControllerBase
+public class StockController: ControllerBase
 {
     IStockService stockService;
 
-    public StoxkController(IStockService service)
+    public StockController(IStockService service)
     {
         stockService = service;
     }

@@ -13,6 +13,15 @@ builder.Services.AddSqlServer<ProductsContext>("Data Source=LAPTOP-PHJ7JT87;Init
 builder.Services.AddScoped<ITipoProductoService, TipoProductoService>();
 builder.Services.AddScoped<IProductoService, ProductoService>();
 builder.Services.AddScoped<IStockService, StockService>();
+//conexion con react
+var proveedor =builder.Services.BuildServiceProvider();
+var configuration =proveedor.GetRequiredService<IConfiguration>();
+builder.Services.AddCors(opciones=>{
+    var frontend =configuration.GetValue<string>("front_end");
+    opciones.AddDefaultPolicy(builder=>{
+        builder.WithOrigins(frontend).AllowAnyMethod().AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -24,6 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 
 app.UseAuthorization();
 

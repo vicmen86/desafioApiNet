@@ -25,6 +25,7 @@ public class ProductoService : IProductoService
     if (productoActual != null)
     {
       productoActual.Nombre = producto.Nombre;
+      producto.Detalle = producto.Detalle;
       producto.Precio = producto.Precio;
 
       await context.SaveChangesAsync();
