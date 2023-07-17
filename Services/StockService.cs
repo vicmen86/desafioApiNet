@@ -24,7 +24,6 @@ public class StockService : IStockService
 
     if (stockActual != null)
     {
-      stockActual.Descripcion = stock.Descripcion;
       stock.Cantidad = stock.Cantidad;
 
       await context.SaveChangesAsync();

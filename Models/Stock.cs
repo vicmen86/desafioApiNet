@@ -4,7 +4,6 @@ public class Stock
 {
   public int IdStock { get; set; }
   public int ProductoId { get; set; }
-  public string Descripcion { get; set; }
   public int Cantidad { get; set; }
   public virtual Producto Producto { get; set; }
 
