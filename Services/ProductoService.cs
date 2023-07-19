@@ -1,4 +1,5 @@
 using ApiNet.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiNet.Services;
 
@@ -11,7 +12,7 @@ public class ProductoService : IProductoService
   }
   public IEnumerable<Producto> Get()
   {
-    return context.Productos;
+    return context.Productos.Include(p=>p.TipoProducto);
   }
   public async Task Save(Producto producto)
   {

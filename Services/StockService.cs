@@ -1,4 +1,5 @@
 using ApiNet.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiNet.Services;
 
@@ -11,7 +12,7 @@ public class StockService : IStockService
   }
   public IEnumerable<Stock> Get()
   {
-    return context.Stocks;
+    return context.Stocks.Include(p=>p.Producto);
   }
   public async Task Save(Stock stock)
   {
